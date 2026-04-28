@@ -88,14 +88,20 @@ const ease = [0.16, 1, 0.3, 1] as const;
 const container: Variants = {
   hidden: {},
   show: {
-    transition: { staggerChildren: 0.08, delayChildren: 0.1 },
+    transition: { staggerChildren: 0.12, delayChildren: 0.2 },
   },
 };
 
 const item: Variants = {
-  hidden: { opacity: 0, y: 12 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease } },
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.9, ease } },
 };
+
+const languages = [
+  { flag: "🇳🇱", label: "Dutch (native)" },
+  { flag: "🇬🇧", label: "English (fluent)" },
+  { flag: "🤖", label: "AI prompting (fluent)" },
+];
 
 function Section({
   label,
@@ -232,9 +238,16 @@ export default function Home() {
         </Section>
 
         <Section label="Languages">
-          <p className="text-[color:var(--muted-foreground)]">
-            Dutch (native), English (fluent), AI prompting (fluent).
-          </p>
+          <ul className="space-y-1.5 text-[color:var(--muted-foreground)]">
+            {languages.map((l) => (
+              <li key={l.label} className="flex items-center gap-3">
+                <span aria-hidden className="text-base leading-none">
+                  {l.flag}
+                </span>
+                <span>{l.label}</span>
+              </li>
+            ))}
+          </ul>
         </Section>
 
         <Section label="Contact">
