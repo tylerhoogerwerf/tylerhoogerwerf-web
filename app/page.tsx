@@ -17,7 +17,8 @@ import {
   SiGithub,
   SiFigma,
 } from "react-icons/si";
-import { FaAws, FaPalette, FaBrain, FaLock, FaRobot } from "react-icons/fa";
+import { FaAws, FaPalette, FaBrain, FaLock } from "react-icons/fa";
+import { LuSparkles } from "react-icons/lu";
 import NL from "country-flag-icons/react/3x2/NL";
 import GB from "country-flag-icons/react/3x2/GB";
 
@@ -109,7 +110,7 @@ const languages = [
     label: "English (fluent)",
   },
   {
-    icon: <FaRobot className="h-[14px] w-[14px]" />,
+    icon: <LuSparkles className="h-[14px] w-[14px]" />,
     label: "AI prompting (fluent)",
   },
 ];
