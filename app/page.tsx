@@ -17,7 +17,9 @@ import {
   SiGithub,
   SiFigma,
 } from "react-icons/si";
-import { FaAws, FaPalette, FaBrain, FaLock } from "react-icons/fa";
+import { FaAws, FaPalette, FaBrain, FaLock, FaRobot } from "react-icons/fa";
+import NL from "country-flag-icons/react/3x2/NL";
+import GB from "country-flag-icons/react/3x2/GB";
 
 const experience = [
   {
@@ -98,9 +100,18 @@ const item: Variants = {
 };
 
 const languages = [
-  { flag: "🇳🇱", label: "Dutch (native)" },
-  { flag: "🇬🇧", label: "English (fluent)" },
-  { flag: "🤖", label: "AI prompting (fluent)" },
+  {
+    icon: <NL title="Netherlands" className="h-3 w-auto rounded-[1px]" />,
+    label: "Dutch (native)",
+  },
+  {
+    icon: <GB title="United Kingdom" className="h-3 w-auto rounded-[1px]" />,
+    label: "English (fluent)",
+  },
+  {
+    icon: <FaRobot className="h-[14px] w-[14px]" />,
+    label: "AI prompting (fluent)",
+  },
 ];
 
 function Section({
@@ -241,8 +252,11 @@ export default function Home() {
           <ul className="space-y-1.5 text-[color:var(--muted-foreground)]">
             {languages.map((l) => (
               <li key={l.label} className="flex items-center gap-3">
-                <span aria-hidden className="text-base leading-none">
-                  {l.flag}
+                <span
+                  aria-hidden
+                  className="inline-flex w-5 items-center justify-center"
+                >
+                  {l.icon}
                 </span>
                 <span>{l.label}</span>
               </li>
