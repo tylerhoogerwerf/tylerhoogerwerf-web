@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Script from "next/script";
 import "./globals.css";
 
 const ttCommons = localFont({
@@ -28,6 +29,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-[color:var(--background)] text-[color:var(--foreground)]">
         {children}
       </body>
+      <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
     </html>
   );
 }
